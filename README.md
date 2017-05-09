@@ -139,7 +139,7 @@ the `KitchenConsumer` constructor:
     TracingInterceptor tracingInterceptor = new TracingInterceptor(
              GlobalTracer.get(),
              Arrays.asList(SpanDecorator.STANDARD_TAGS));
-    client = new OkHttpClient.Builder()
+    client = new OkHttpClient.newBuilder()
             .addInterceptor(tracingInterceptor)
             .addNetworkInterceptor(tracingInterceptor)
             .build();
